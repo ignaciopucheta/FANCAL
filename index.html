@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Metadados e links para estilos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário Financeiro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <div class="header">
+        <div class="title">Calendário Financeiro</div>
+        <div class="nav">
+            <button>Lançamentos</button>
+            <button>Cartões de Crédito</button>
+            <button>Fonte Pagamento</button>
+            <button>Configurações</button>
+            <button>Relatório</button>
+        </div>
+    </div>
+    <!-- Conteúdo principal -->
+    <div class="main-content">
+        <!-- Container do calendário -->
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <button class="nav-button" id="prev-year">&lt;</button>
+                <span id="prev-year-label" class="faded">2024</span>
+                <span id="year">2025</span>
+                <span id="next-year-label" class="faded">2026</span>
+                <button class="nav-button" id="next-year">&gt;</button>
+                <button class="nav-button" id="prev-month">&lt;</button>
+                <span id="prev-month-label" class="faded">fev</span>
+                <span id="month">mar</span>
+                <span id="next-month-label" class="faded">abr</span>
+                <button class="nav-button" id="next-month">&gt;</button>
+            </div>
+            <div id="calendar">
+                <div class="day">Dom</div>
+                <div class="day">Seg</div>
+                <div class="day">Ter</div>
+                <div class="day">Qua</div>
+                <div class="day">Qui</div>
+                <div class="day">Sex</div>
+                <div class="day">Sab</div>
+                <!-- Os dias do mês serão renderizados pelo JavaScript -->
+            </div>
+        </div>
+        <!-- Container do resumo financeiro -->
+        <div class="summary-container">
+            <button id="new-entry">+ Novo Lançamento</button>
+            <div class="summary-buttons">
+                <button class="pending">R$0,00<br>Contas Pendentes</button>
+                <button class="receivable">R$0,00<br>À Receber</button>
+                <button class="expense">R$0,00<br>Contas Pagas</button>
+                <button class="income">R$0,00<br>Receitas</button>
+            </div>
+            <div class="summary">
+                <p id="total-income">R$0,00<br>Saldo do Mês</p>
+                <p id="net-result">R$0,00<br>Saldo Geral *</p>
+            </div>
+            <p class="note">* Não são consideradas transações pendentes</p>
+        </div>
+    </div>
+    <!-- Modal de lançamento financeiro -->
+    <div id="financial-form" class="modal">
+        <h2>Novo Lançamento</h2>
+        <label for="day" style="margin-bottom: 5px;">Dia:</label>
+        <input type="number" id="day" name="day" readonly>
+        <label for="date" style="margin-bottom: 5px;">Data:</label>
+        <input type="date" id="date" name="date">
+        <label for="name" style="margin-bottom: 5px;">Nome:</label>
+        <input type="text" id="name" name="name">
+        <label for="value" style="margin-bottom: 5px;">Valor:</label>
+        <input type="number" id="value" name="value" step="0.01">
+        <label for="category" style="margin-bottom: 5px;">Categoria:</label>
+        <select id="category" name="category">
+            <option value="Moradia">Moradia</option>
+            <option value="Despesas Médicas">Despesas Médicas</option>
+            <option value="Alimentação">Alimentação</option>
+            <option value="Vestuário">Vestuário</option>
+            <option value="Higiene Pessoal">Higiene Pessoal</option>
+            <option value="Lazer">Lazer</option>
+            <option value="Educação">Educação</option>
+            <option value="Cachorros">Cachorros</option>
+            <option value="Diversos">Diversos</option>
+        </select>
+        <label for="type" class="type-label" style="margin-bottom: 5px;">Tipo:</label>
+        <div class="switch-container">
+            <div>
+                <span>Receita</span>
+                <input type="checkbox" id="type-switch-receita" name="type-switch-receita" class="switch">
+                <label for="type-switch-receita" class="switch-label"></label>
+            </div>
+            <div>
+                <span>Despesa</span>
+                <input type="checkbox" id="type-switch-despesa" name="type-switch-despesa" class="switch">
+                <label for="type-switch-despesa" class="switch-label"></label>
+            </div>
+        </div>
+        <div class="button-container">
+            <button type="button" id="cancel">Cancelar</button>
+            <button type="submit" id="save-entry">Salvar</button>
+        </div>
+    </div>
+    <!-- Rodapé -->
+    <div class="footer">
+        <p>Desenvolvido por <a href="https://github.com/ignaciopucheta" target="_blank">Ignacio Pucheta</a></p>
+    </div>
+    <!-- Script JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

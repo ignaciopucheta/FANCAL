@@ -1,0 +1,393 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Estilos do cabeçalho */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ccc;
+}
+
+.header button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #007bff;
+}
+
+.header button:hover {
+    text-decoration: underline;
+}
+
+.header .title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header .nav {
+    display: flex;
+    align-items: center;
+}
+
+.header .nav button {
+    margin-left: 10px;
+}
+
+/* Estilos do conteúdo principal */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Estilos do calendário */
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.nav-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.faded {
+    color: #ccc;
+    margin: 0 5px;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.day {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.day:hover {
+    background-color: #f0f0f0;
+}
+
+/* Estilos do resumo financeiro */
+.summary-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#new-entry {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.summary-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.summary-buttons button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.summary {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.summary p {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.note {
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+}
+
+/* Novas classes para estilização */
+.income {
+    color: green;
+}
+
+.expense {
+    color: red;
+}
+
+.pending {
+    color: pink;
+}
+
+.receivable {
+    color: lightgreen;
+}
+
+.positive-balance {
+    background-color: lightgreen;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.negative-balance {
+    background-color: lightcoral;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Estilos do modal de lançamento financeiro */
+.modal {
+    display: none; /* Inicialmente escondido */
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.modal h2 {
+    margin-top: 0;
+}
+
+.modal label {
+    margin-top: 10px;
+}
+
+.modal input{
+    margin-top: 1px;
+    padding: 5px;
+    width: 90%;
+}
+
+.modal select {
+    margin-top: 1px;
+    padding: 5px;
+    width: 97%;
+}
+
+.type-label {
+    margin-top: 5px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.modal button {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#cancel {
+    background-color: #ccc;
+}
+
+/* Estilos do rodapé */
+.footer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-top: 1px solid #ccc;
+    width: 100%;
+    text-align: center;
+}
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos do disjuntor */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch-label {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.switch-label:before {
+    position: absolute;
+    content: "";
+    height: 0px;
+    width: 0px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+.switch-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 10px;
+    color: white;
+    font-size: 14px;
+}
+
+.switch-inner::before {
+    content: "Despesa";
+    color: red;
+}
+
+.switch-inner::after {
+    content: "Receita";
+    color: green;
+}
+
+input:checked + .switch-label {
+    background-color: green;
+}
+
+input:checked + .switch-label:before {
+    transform: translateX(15px);
+}
+
+input:not(:checked) + .switch-label {
+    background-color: red;
+}
+
+/* Estilos dos disjuntores */
+.switch-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 10px;
+}
+
+.switch {
+    display: none;
+}
+
+.switch-label {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 15px;
+    background-color: #dddddd;
+    border-radius: 60px;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+
+.switch-label:before,
+.switch-label:after {
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    bottom: 1px;
+    content: '';
+}
+
+.switch-label:before {
+    right: 1px;
+    background-color: #f1f1f1;
+    border-radius: 60px;
+    transition: all 0.4s;
+}
+
+.switch-label:after {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s;
+}
+
+#type-switch-receita:checked + .switch-label:before {
+    background-color: green;
+}
+
+#type-switch-receita:checked + .switch-label:after {
+    transform: translateX(15px);
+}
+
+#type-switch-despesa:checked + .switch-label:before {
+    background-color: red;
+}
+
+#type-switch-despesa:checked + .switch-label:after {
+    transform: translateX(15px);
+}
