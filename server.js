@@ -50,6 +50,11 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Rota para servir o arquivo index.html
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 // Rota para salvar dados financeiros
 app.post('/save', (req, res) => {
     console.log('Requisição para salvar dados financeiros recebida:', req.body);
